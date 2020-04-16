@@ -1,7 +1,9 @@
 #  CodeName - Duet
+## Game Session Service
+ 
 
-
-[![Build Status](https://travis-ci.com/codename-duet/gameSession-service.svg?branch=master)](https://travis-ci.com/github/codename-duet/gameSession-service)
+![](https://github.com/codename-duet/game-session-service
+/workflows/Java%20CI%20with%20Maven/badge.svg)
 
 This repository contains the CodeName-Duet Player Session Manager Service.
 
