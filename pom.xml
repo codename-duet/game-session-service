@@ -19,6 +19,14 @@
 		<maven.compiler.source>11</maven.compiler.source>
 		<maven.compiler.target>11</maven.compiler.target>
 		<spring-cloud.version>Hoxton.SR3</spring-cloud.version>
+		<sonar.projectKey>codename-duet_game-session-service</sonar.projectKey>
+		<sonar.organization>codename-duet</sonar.organization>
+		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
+		<code.coverage.exclusions>
+			**/com/valdemar/codenameduet/gamesessionservice/config/**,
+			**/com/valdemar/codenameduet/gamesessionservice/model/**,
+			**/com/valdemar/codenameduet/gamesessionserviceSessionManagerServiceApplication.java
+		</code.coverage.exclusions>
 	</properties>
 
 	<dependencies>
@@ -212,6 +220,43 @@
 					</plugins>
 				</build>
 			</profile>
+		<profile>
+			<id>sonar</id>
+			<properties>
+				<sonar.sources>.</sonar.sources>
+				<sonar.inclusions>src/main/java/**,src/main/resources/**</sonar.inclusions>
+				<sonar.exclusions>${code.coverage.exclusions}</sonar.exclusions>
+			</properties>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.sonarsource.scanner.maven</groupId>
+						<artifactId>sonar-maven-plugin</artifactId>
+						<version>3.7.0.1746</version>
+						<executions>
+							<execution>
+								<phase>verify</phase>
+								<goals>
+									<goal>sonar</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
 	</profiles>
+
+	<distributionManagement>
+
+		<repository>
+			<id>github</id>
+			<name>NoticeBoard Simple CRUD application</name>
+			<url>https://maven.pkg.github.com/codename-duet/game-session-service</url>
+		</repository>
+	</distributionManagement>
 
 </project>
