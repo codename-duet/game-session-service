@@ -1,0 +1,27 @@
+### Send POST request with json body
+POST http://localhost:8071/gamesession
+Content-Type: application/json
+
+{
+  "playerId": "1"
+}
+
+###
+### Send POST request with json body
+PUT http://localhost:8071/gamesession/92b3c3bb-c9a7-4c64-b272-7a262e288667
+Content-Type: application/json
+
+{
+  "playerId": "12"
+}
+
+###
+### Send POST request with json body
+GET http://localhost:8071/gamesession/457d6411-a695-4bd8-9dd8-008416c11b1e
+
+###
+
+### Send POST request with json body
+GET http://localhost:8071/gamesession?playerId=1&filter=WAITING_FOR_PLAYER
+
+###

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+  <changeSet author="valper" id="changelog-1.0">
+    <createTable tableName="game_session">
+      <column autoIncrement="true" name="id" type="number">
+        <constraints primaryKey="true"/>
+      </column>
+      <column name="session_id" type="VARCHAR(255)"/>
+      <column name="status" type="VARCHAR(255)"/>
+      <column name="player_one_id" type="number"/>
+      <column name="player_two_id" type="number"/>
+      <column name="game_session_data" type="json"/>
+      <column name="created_at" type="datetime"/>
+      <column name="updated_at" type="datetime"/>
+
+    </createTable>
+
+    <addUniqueConstraint
+      columnNames="session_id"
+      constraintName="session_id_unique_constraint"
+      tableName="game_session"/>
+
+  </changeSet>
+</databaseChangeLog>

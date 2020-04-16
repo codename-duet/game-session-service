@@ -1,0 +1,11 @@
+custom:
+  db:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: codenameduet-sessionmanagerservice
+    password: codenameduet-sessionmanagerservice
+
+h2:
+  console:
+    enabled: true
+    path: /console
