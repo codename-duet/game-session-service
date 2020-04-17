@@ -12,9 +12,11 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcOperations;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableJdbcRepositories(basePackages = "com.valdemar.codenameduet.gamesessionservice.adapters.repository")
+@EnableTransactionManagement
 public class RepositoryConfig extends AbstractJdbcConfiguration {
 
   @Bean

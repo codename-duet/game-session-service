@@ -12,6 +12,8 @@ Valdemar Pereira;
 [[overview]]
 = Overview
 
+Online documentation foe the available API
+
 [[overview-http-verbs]]
 == HTTP verbs
 
@@ -85,16 +87,23 @@ Users of the API should not create URIs themselves, instead they should use the 
 = Resources
 
 [[resources-gameSession]]
-== Player
+== Game Session
 
-The Player resources is used to register and extract details about existing players
+The GameSession resources is used to create and extract details about existing Game Sessions
 
 [[resources-gameSession-list-details]]
-=== Player Details
+=== GameSession Details
 
 A `GET` request will get all of the gameSession's details.
 
 operation::list-gameSession-details[snippets='path-parameters,response-fields,curl-request,http-response,links']
+
+[[resources-player-gameSession-list-details]]
+=== Player GameSession Details
+
+A `GET` request will get all of the gameSession's details associated to a player.
+
+operation::player-gameSessions-details[snippets='path-parameters,response-fields,curl-request,http-response,links']
 
 [[resources-gameSession-register]]
 === Register a gameSession
